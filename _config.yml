@@ -1,8 +1,8 @@
 # Site settings
-title: Bird
-SEOTitle: Bird的博客 | Bird
+title: Forked from white-bird's blog, under modeling
+SEOTitle: Xuan
 header-img: img/home-bg.jpg
-email: whitebird827@163.com
+# email: 
 description: "无聊世界和有趣事"
 keyword: "机器学习,神经网络,自然语言"
 url: "https://white-bird.github.io"              # your host, for absolute URL
