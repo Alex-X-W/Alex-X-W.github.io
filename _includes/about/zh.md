@@ -1,4 +1,4 @@
-> yo, 这么早就来, 你该不会是是狗子吧
+> hey my friend, I just got started setting this up:) Nice seeing you here!
 
 
 
