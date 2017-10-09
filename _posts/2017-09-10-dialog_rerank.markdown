@@ -40,12 +40,7 @@ tags:
 我们的模型用tensorflow重写了[Sequential Matching Networks](http://www.aclweb.org/anthology/P17-1046).
 
 ### 1.4 名词/术语说明
-名称 | 含义
---- | ---
-*utterance* | 来自某一id的一句话. 我们的问题里一个*session*一般由一个用户和一个客服的多个来回的*utterance*组成
-*session* | 一段完整会话  
-*context* | 模型中考虑的所有上文utterances  
-*response/answer* | 客服的utterance
+![](/img/in-post/1/table1.png)
   
   
 
@@ -80,20 +75,12 @@ user-defind词表里有领域词汇, 产品相关的词汇等.
 #### 3.2.1. 语料收集
 收集领域相关文章, 并上我们的语料本身.
 #### 3.2.2. 在训练好embeddings之后, 需要依次导出模型需要用的两个`_pickle`文件:  
-名称 | 类型 | 内容 | 备注
---- | --- | --- | ---
-`w2i` | python built-in `dict` | *word => idx* | 上线serving时仍然需要
-`w2v` | 2-D `numpy array` | embeddings的具体值, 比如说以`np.float32`保存 | 上线serving时不需要
-
+![](/img/in-post/1/table2.png)
 实际的`w2i`以及`w2v`比embeddings多两个向量, 分别对应`<PAD>`和`<UNK>`.  
 
 ## 4. 模型离线阶段
 #### 离线阶段需要的基本代码
-代码文件 | 说明 | 备注
---- | --- | ---
-`train.py` | 从头开始的训练 | 单GPU
-`continue_train.py` | 从checkpoint加载模型继续训练 | 单GPU
-`export.py` | 从checkpoint中加载模型之后export | export之后要将生成的`saved_model.pb`和`variables/`置于一个名为version_number的文件夹下, 例如`1/`, 具体请见[TFserving Tutorial](https://www.tensorflow.org/serving/serving_basic)
+![](/img/in-post/1/table3.png)
   
 上述的`train.py`和`continue_train.py`在考虑实际硬件资源是可以有多GPU的multi-towered版本, 加速训练.  
 
