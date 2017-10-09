@@ -1,11 +1,11 @@
 # Site settings
-title: Forked from white-bird's blog, under modeling
+title: So, one more dr!nk?
 SEOTitle: Xuan
-header-img: img/home-bg.jpg
+header-img: img/header.jpeg
 # email: 
-description: "无聊世界和有趣事"
-keyword: "机器学习,神经网络,自然语言"
-url: "https://white-bird.github.io"              # your host, for absolute URL
+description: ""
+keyword: ""
+url: "https://alex-x-w.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -14,9 +14,9 @@ baseurl: ""                             # for example, '/blog' if your blog host
 RSS: false
 #weibo_username:     aaaa
 #zhihu_username:     aaaa
-github_username:    white-bird
+github_username:    Alex-X-W
 #facebook_username:  aaaa
-# linkedin_username:  firstname-lastname-idxxxx
+linkedin_username:  xuan-wang-818822a6
 
 
 
@@ -25,7 +25,7 @@ github_username:    white-bird
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
