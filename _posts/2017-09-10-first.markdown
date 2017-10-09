@@ -1,0 +1,19 @@
+---
+layout:     post
+title:      "my first post"
+subtitle:   "actually nothing in here"
+date:       2017-10-09
+author:     "Xuan"
+header-img: "img/in-post/1/header.jpeg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - personal
+    - nlp
+    - ml
+---
+
+
+>  **my first post**  
+
+>
