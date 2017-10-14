@@ -3,6 +3,7 @@ layout: page
 title: "About"
 description: "---"
 header-img: "img/about-bg.jpeg"
+multilingual: true
 ---
 
 <!-- Language Selector -->
@@ -24,39 +25,6 @@ header-img: "img/about-bg.jpeg"
     {% capture about_en %}{% include about/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-
-
-    }
-
-    // handle select change
-    function onLanChange(index){
-
-            window.location.hash = "#zh"
-
-    }
-
-    // init
-    _render();
-</script>
-
 
 {% if site.disqus_username %}
 
