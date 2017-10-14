@@ -1,15 +1,17 @@
 ---
 layout: page
 title: "About"
-description: "Under modeling"
+description: "---"
 header-img: "img/about-bg.jpeg"
 ---
 
 <!-- Language Selector -->
+{% if page.multilingual %}
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
     <option value="1" selected> 英文 English </option>
 </select>
+{% endif %}
 
 <!-- Chinese Version -->
 <div class="zh post-container">
