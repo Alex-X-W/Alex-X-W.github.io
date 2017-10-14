@@ -8,7 +8,7 @@ header-img: "img/about-bg.jpeg"
 <!-- Language Selector -->
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
-
+    <option value="1" selected> 英文 English </option>
 </select>
 
 <!-- Chinese Version -->
@@ -18,7 +18,10 @@ header-img: "img/about-bg.jpeg"
 </div>
 
 <!-- English Version -->
-
+<div class="En post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
