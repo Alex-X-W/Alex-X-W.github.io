@@ -82,11 +82,9 @@ Collect in-domain articles, together with our dumped dialog data.
 In fact `w2i` and `w2v` have two more vectors than embeddings, namely `<PAD>` and `<UNK>`.  
 
 ## 4. Offline Stage
-#### Codes
+#### Codes Needed
 ![](/img/in-post/2/table3.png)
   
-The above `train.py` and `continue_train.py` can have multi-towered version if given more GPUs.  
-
 ## 5. Online Stage
 Just need to be familiar TFserving. Server side code can adopt from Tensorflow's official ranking serving code, but pay a little more attention to client side.  
 Still one thing to reiterate:  
