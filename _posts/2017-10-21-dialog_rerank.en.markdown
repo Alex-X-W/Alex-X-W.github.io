@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "QA Bot built from dumped dialog"
+title:      "Build QA Bot from Dumped Dialog"
 subtitle:   "a two step model"
 date:       2017-10-09
 author:     "Xuan"
@@ -14,7 +14,7 @@ tags:
 ---
 
 
-# QA Bot built from dumped dialog
+# Build QA Bot from Dumped Dialog
 
 *author: Xuan Wang*  
 
