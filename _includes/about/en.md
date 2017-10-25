@@ -1,5 +1,5 @@
-> Autumn is the best season in New York.
+> Autumn in New York, why does it seem so inviting?
 
 So, one more drink?
 
-Hi my friend, I write about things related to my work and study here...or occationally some personal.
+Hi, I write about things related to my work and study here...or occationally some personal.
