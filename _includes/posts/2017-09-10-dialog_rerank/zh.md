@@ -1,19 +1,3 @@
----
-layout:     post
-title:      "自动客服系统"
-subtitle:   "客服场景下由历史语料构建多轮自动回复系统"
-date:       2017-10-09
-author:     "Xuan"
-header-img: "img/in-post/1/header.jpeg"
-header-mask: 0.3
-catalog:    true
-tags:
-    - nlp
-    - ml
-    - bot
----
-
-
 # 客服场景下由历史语料构建自动回复系统
 *作者: 王玄*  
 

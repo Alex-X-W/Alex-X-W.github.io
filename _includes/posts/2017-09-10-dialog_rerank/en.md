@@ -1,19 +1,3 @@
----
-layout:     post
-title:      "Build QA Bot from Dumped Dialog"
-subtitle:   "a two step model"
-date:       2017-10-09
-author:     "Xuan"
-header-img: "img/in-post/1/header.jpeg"
-header-mask: 0.3
-catalog:    true
-tags:
-    - nlp
-    - ml
-    - bot
----
-
-
 # Build QA Bot from Dumped Dialog
 
 *author: Xuan Wang*  
