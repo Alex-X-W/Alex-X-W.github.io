@@ -17,6 +17,7 @@ tags:
 #### 0. Requirements
 * Tensorflow >= 1.3
 * Maven
+Note: Maven is not necessary, you could as well add raw TensorFlow' Java binding JAR into your project classpath. But if you spend some time to figure out Maven, it does make your life easier and neater.
 
 #### 1. Train and Save a Model in Python with TF
 Please go to [`model_py/model.py`](https://github.com/Alex-X-W/JetLite/blob/master/model_py/model.py) for a toy example, which takes in a matrix of shape (2, 2), and adds 1 to each element then outputs.
