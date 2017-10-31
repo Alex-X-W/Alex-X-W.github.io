@@ -14,7 +14,7 @@ Customer service covers from presale to postsale, traditionally this work relies
 
 ### 1.2 System Overview
 The leading QA bots nowadays follows a cascade pattern of "Search" and "Rerank":  
-![](/img/in-post/2/architecture.png)
+![](/img/in-post/1/architecture.png)
 courtesy: [AliMe Chat](http://www.aclweb.org/anthology/P17-2079)  
 
 First, the search engine(the green part) retrieves some number of response candidates; then hand those to reranking system(the yellow part) to do a finer-grained ranking to output.  
@@ -28,7 +28,7 @@ In production cases, a dialog about a topic may includes multiple turns of utter
 My model is a reimplementation of [Sequential Matching Networks](http://www.aclweb.org/anthology/P17-1046).
 
 ### 1.4 Terminology
-![](/img/in-post/2/table1.png)
+![](/img/in-post/1/table1.png)
   
   
 
@@ -67,7 +67,7 @@ In fact `w2i` and `w2v` have two more vectors than embeddings, namely `<PAD>` an
 
 ## 4. Offline Stage
 #### Codes Needed
-![](/img/in-post/2/table3.png)
+![](/img/in-post/1/table3.png)
   
 ## 5. Online Stage
 Just need to be familiar TFserving. Server side code can adopt from Tensorflow's official ranking serving code, but pay a little more attention to client side.  
