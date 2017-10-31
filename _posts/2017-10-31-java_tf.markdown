@@ -1,0 +1,33 @@
+---
+layout:     post
+title:      "How to use TensorFlow model in Java"
+subtitle:   "A skeleton example"
+date:       2017-10-31
+author:     "Xuan"
+header-img: "img/in-post/1/header.jpeg"
+header-mask: 0.3
+catalog:    true
+multilingual: true
+tags:
+    - engineering
+    - machine learning
+---
+
+### A Skeleton Showing How to Use TF Model in JAVA
+#### 0. Requirements
+* Tensorflow >= 1.3
+* Maven
+
+#### 1. Train and Save a Model in Python with TF
+Please go to [`model_py/model.py`](https://github.com/Alex-X-W/JetLite/blob/master/model_py/model.py) for a toy example, which takes in a matrix of shape (2, 2), and adds 1 to each element then outputs.
+
+#### 2. Freeze the Model
+Basically what this step does is to convert all trained variables into constant tensors, so that when you later on load the model in Java, you don't need to initialize the variables.  
+You can also choose to optimize the graph for inference using Tensorflow's [`optimize_for_inference()`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/optimize_for_inference.py). A series of basic optimizations will be applied including:  
+- strip unused nodes: since in inference we only need input and output nodes together with nodes in the middle of them  
+- remove unnecessary nodes: nodes such as numerics checking and identity are good to be pruned when inference  
+Please see [`model_py/freeze.py`](https://github.com/Alex-X-W/JetLite/blob/master/model_py/freeze.py).
+
+#### 3. Load in Java and Run
+You still need to 1)prepare your inference data, 2)import the graph from JAVA, 3)launch a session to hold data flow and 4)feed the graph with data.  
+Please see [`src/main/java/edu/nyu/jetlite/tf_intergration.java`](https://github.com/Alex-X-W/JetLite/blob/master/src/main/java/edu/nyu/jetlite/tf_intergration.java).
