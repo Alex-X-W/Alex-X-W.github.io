@@ -62,7 +62,7 @@ Concretely, add user-defined words after `import jieba` immediately. This bunch 
 #### 3.2.1. Collect corpus
 Collect in-domain articles, together with our dumped dialog data.
 #### 3.2.2 Export two files after done training embeddings:  
-![](/img/in-post/2/table2.png)
+![](/img/in-post/1/table2.png)
 In fact `w2i` and `w2v` have two more vectors than embeddings, namely `<PAD>` and `<UNK>`.  
 
 ## 4. Offline Stage
