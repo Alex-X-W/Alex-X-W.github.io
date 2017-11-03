@@ -4,7 +4,7 @@
 
 
 ## 1. Intro
-This is a summary from my work in [Laiye, Inc](http://www.laiye.com).  
+This is a summary from my work in [Laiye, Inc](http://www.laiye.com). I will be mainly looking at the processes not specific algorithems or models. 
 ### 1.1 Our Context
 Customer service covers from presale to postsale, traditionally this work relies heavily on humans. But with a QA bot, we can:  
 * alleviate CSR's(Customer Service Representitive) workload, and raise the efficiency, (statistics from [Laiye, Inc](http://www.laiye.com) has shown a leap from 1:100 CSR-User rate to 1:400!)  
