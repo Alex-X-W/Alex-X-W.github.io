@@ -29,8 +29,10 @@ For a slightly better performance which turned out to be the trigger of overflow
 Overflow time!
 ```c
 /*
-bang when `multiplier` reaches ceil(sqrt(2^31)) = 46341  
-which is when `N` gets to (46341-2-1)*2 + 2 = 92678  
+bang when `multiplier` reaches ceil(sqrt(2^31)) = 46341
+*/
+/*
+which is when `N` gets to (46341-2-1)*2 + 2 = 92678
 */
 __global__ void CUDACross(bool *candidates, int size){
     for (int idx = blockIdx.x*blockDim.x + threadIdx.x; idx < size/2 + 1; idx += blockDim.x * gridDim.x) {
