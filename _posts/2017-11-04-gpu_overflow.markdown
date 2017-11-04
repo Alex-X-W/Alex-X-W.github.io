@@ -4,7 +4,7 @@ title:      "Elements of GPU overflow programming:P"
 subtitle:   "an exploded Integer whitens all the data"
 date:       2017-11-04
 author:     "Xuan"
-header-img: "img/in-post/2/header.jpg"
+header-img: "img/in-post/3/header.jpeg"
 header-mask: 0.3
 catalog:    true
 multilingual: false
@@ -16,7 +16,7 @@ tags:
 ### An exploded Integer whitens all the data
 #### 0. Background
 I am studying a little on GPU (specifically Nvidia ones) these days. And the recent toy problem I worked on was a simple prime number generating algorithm. There are a lot of algorithms to go but since my goal is around GPU so I just took an unsalted version with little optimization, the Greek one called [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).  
-![](/img/in-post/3/Sieve_of_Eratosthenes_animation)  
+![](/img/in-post/3/Sieve_of_Eratosthenes_animation.gif)  
 *source: [wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)*
 
 #### 1. The Problem
@@ -24,15 +24,29 @@ The algorithm in pseudocode is straightforward:
 ![](/img/in-post/3/algorithm.png)  
 *source: [wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)*  
 So far it seemed all right huh? Oh you just spotted a pitfall? You are welcome with my boxes in the below image :)  
-For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the ![](http://latex.codecogs.com/gif.latex?i%20%3C%20%5Csqrt%7BN%7D) computation by ![](http://latex.codecogs.com/gif.latex?i%5E2%20%3C%20N).  
+For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the `i < sqrt(N)` computation by `i * i > N`. Then...
 Overflow time!
-![](/img/in-post/3/kernel.png)
+```c
+__global__ void CUDACross(bool *candidates, int size){
+    for (int idx = blockIdx.x*blockDim.x + threadIdx.x; idx < size/2 + 1; idx += blockDim.x * gridDim.x) {
+        int multiplier = idx + 2;
+        int check = multiplier * multiplier; // bang when `multiplier` reaches ceil(sqrt(2^31)) = 46341
+        //if (candidates[multiplier-2]) {    // which is when `N` gets to (46341-2-1)*2 + 2 = 92678
+            while (check < size + 2){
+                candidates[check - 2] = false;
+                check += multiplier;
+            }
+        //}
+    }
+}
+```
 
 #### 2. The Scene
 I was originally thinking that even when overflows, those composite numbers got crossed out before overflow should not be affected. But mysteriously when overflow happens, the whole bulk data come out as untouched. Nothing got crossed!  
 It turned out oddly there was a clear cleavage of correct and error, precisely at N = 92678. The weird behavior was quite steadily reproducible when I tested with varying input sizes. And it was so reproducible that made me believe it was indeed a bug in my code, not in third party libraries cuz I didn't include any, surely not in system libraries cuz they never betrayed me, and absolutely not in the processor cuz I ran the program not with my machine...
 
 > More experienced programmers know very well that the bug is generally in their code: occasionally in third-party libraries; very rarely in system libraries; exceedingly rarely in the compiler; and never in the processor.
+
 *[quote from Xavier Leroy](http://gallium.inria.fr/blog/intel-skylake-bug/)*
 
 The behavior when such integer overflow happens is weird, all the changes you have made are gone... I suspect it is designed so for some reason I don't know. I think I understand now the words from [Prof. Z.](http://www.mzahran.com) who is teaching us GPU that  
