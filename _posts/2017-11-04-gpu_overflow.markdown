@@ -28,11 +28,15 @@ So far it seemed all right huh? Oh you just spotted a pitfall? You are welcome w
 For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the `i < sqrt(N)` computation by `i * i > N`. Then...
 Overflow time!
 ```c
+/*
+bang when `multiplier` reaches ceil(sqrt(2^31)) = 46341
+which is when `N` gets to (46341-2-1)*2 + 2 = 92678
+*/
 __global__ void CUDACross(bool *candidates, int size){
     for (int idx = blockIdx.x*blockDim.x + threadIdx.x; idx < size/2 + 1; idx += blockDim.x * gridDim.x) {
         int multiplier = idx + 2;
-        int check = multiplier * multiplier; // bang when `multiplier` reaches ceil(sqrt(2^31)) = 46341
-        while (check < size + 2){            // which is when `N` gets to (46341-2-1)*2 + 2 = 92678
+        int check = multiplier * multiplier;
+        while (check < size + 2) {
             candidates[check - 2] = false;
             check += multiplier;
         }
