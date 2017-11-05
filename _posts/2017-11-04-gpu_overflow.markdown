@@ -24,7 +24,7 @@ I am studying a little on GPU (specifically Nvidia ones) these days. And the rec
 The algorithm in pseudocode is straightforward:  
 ![](/img/in-post/3/algorithm.png)  
 *source: [wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)*  
-So far it seemed all right huh? Oh you just spotted a pitfall? You are welcome with my boxes in the below image :)  
+So far it seemed all right huh? Oh you just spotted a pitfall? You are welcome with my boxes in the image :)  
 For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the `i < sqrt(N)` computation by `i * i > N`. Then...
 Overflow time!
 ```c
@@ -48,7 +48,7 @@ __global__ void CUDACross(bool *candidates, int size){
 
 #### 2. The Scene
 I was originally thinking that even when overflows, those composite numbers got crossed out before overflow should not be affected. But mysteriously when overflow happens, the whole bulk data come out as untouched. Nothing got crossed!  
-It turned out oddly there was a clear cleavage of correct and error, precisely at N = 92678. The weird behavior was quite steadily reproducible when I tested with varying input sizes. And it was so reproducible that made me believe it was indeed a bug in my code, not in third party libraries cuz I didn't include any, surely not in system libraries cuz they never betrayed me, and absolutely not in the processor cuz I ran the program not with my machine...
+It turned out oddly there was a clear cleavage of correct and error, precisely at N = 92678. The weird behavior was quite steadily reproducible when I tested with varying input sizes. And it was so reproducible that made me believe it was indeed a bug in my code, not in third party libraries cuz I didn't include any, surely not in system libraries cuz they never betrayed me, and absolutely not in the compiler or processor cuz I ran the program not with my machine...
 
 > More experienced programmers know very well that the bug is generally in their code: occasionally in third-party libraries; very rarely in system libraries; exceedingly rarely in the compiler; and never in the processor.
 
@@ -64,6 +64,6 @@ I tested on both `GeForce GTX TITAN X` and `GeForce GTX TITAN Z` and got the sam
 I pointed to the [repo](https://github.com/Alex-X-W/gpu_overflow) related if you want to play with. It should be easy to reproduce the results.  
 You should see a clear cleavage when N = 92678. When N < 92678, all good; once N >= 92678, nothing got crossed out. (by "crossed out/crossed" I mean deleted from candidate list)  
 To test if all numbers are correct, you can use [`evaluate.py`](https://github.com/Alex-X-W/gpu_overflow/blob/master/evaluate.py):  
-`$ python evaluate.py --gold 1stmillion.txt --test [YOUR_OUTPUT]`
+`$ python evaluate.py --gold 1stmillion.txt --test [YOUR_OUTPUT]`  
 to see a fraction of the output, lets say from char position 12 through 25, you can use:  
 `$ cut -c 12-25 [YOUR_OUTPUT]`
