@@ -25,7 +25,7 @@ The algorithm in pseudocode is straightforward:
 ![](/img/in-post/3/algorithm.png)  
 *source: [wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)*  
 So far it seemed all right huh? Oh you just spotted a pitfall? You are welcome with my boxes in the image :)  
-For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the `i < sqrt(N)` computation by `i * i > N`. Then...
+For a slightly better performance which turned out to be the trigger of overflow (and this blog), we can replace the `i < sqrt(N)` computation by `i * i > N`. Then...  
 Overflow time!
 ```c
 /*
