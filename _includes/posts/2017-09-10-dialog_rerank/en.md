@@ -13,14 +13,14 @@ Customer service covers from presale to postsale, traditionally this work relies
 
 
 ### 1.2 System Overview
-The leading QA bots nowadays follows a cascade pattern of "Search" and "Rerank":  
+The leading QA bots nowadays follow a cascade pattern of "Search" and "Rerank":  
 ![](/img/in-post/1/architecture.png)
 courtesy: [AliMe Chat](http://www.aclweb.org/anthology/P17-2079)  
 
 First, the search engine(the green part) retrieves some number of response candidates; then hand those to reranking system(the yellow part) to do a finer-grained ranking to output.  
 The reason to this design is to reduce the response time while maintain the most recall. Search engine is flashing fast but lacks of the ability to capture semantics. So reranking system is thus designed to make up. Reranking system is modeled more complicatedly, e.g. using deep networks, and usually it is intolerable to feed all candidates from knowledge base to it.  So, we stack them.  
 
-Here we talk about reranking system.  
+Here we talk about the reranking system.  
 
 
 ### 1.3 Multi-turn Reranking System
