@@ -58,7 +58,7 @@ user-defind词表里有领域词汇, 产品相关的词汇等.
 ### 3.2 embeddings的准备
 #### 3.2.1. 语料收集
 收集领域相关文章, 并上我们的语料本身.
-#### 3.2.2. 在训练好embeddings之后, 需要依次导出模型需要用的两个`_pickle`文件:  
+#### 3.2.2. 在训练好embeddings之后, 需要依次导出模型需要用的两个`pickle`文件:  
 ![](/img/in-post/1/table2.png)
 实际的`w2i`以及`w2v`比embeddings多两个向量, 分别对应`<PAD>`和`<UNK>`.  
 
