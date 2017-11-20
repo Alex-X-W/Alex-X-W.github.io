@@ -14,6 +14,17 @@ tags:
 ---
 
 ### An exploded Integer whitens all the data
+#### -1. Update!
+So, I finally figured things out after turning to Professor... So when overflow happens, the kernel got killed because GPU may have some internal assertion that will inspect if there's an overflow.  
+It's just a simple `nvprof` that got me this:  
+```
+==124906== Warning: Found 2 invalid records in the result.
+==124906== Warning: This can happen if device ran out of memory or if a device kernel was stopped due to an assertion.
+==124906== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+100.00%  29.403us         1  29.403us  29.403us  29.403us  [CUDA memcpy HtoD]
+```
+Note here there is only one memcpy from host to device, which means what's been moved into the device doesn't get moved out and hence the mysterious "whitenning" happened.  
 #### 0. Background
 I am studying a little on GPU (specifically Nvidia ones) these days. And the recent toy problem I worked on was a simple prime number generating algorithm. There are a lot of algorithms to go but since my goal is around GPU so I just took an unsalted version with little optimization, the Greek one called [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).  
 ![](/img/in-post/3/Sieve_of_Eratosthenes_animation.gif)  
