@@ -17,8 +17,8 @@ First, let's consider a simple example, where a guy's happiness ($H$) can be cau
 
 Now if we set the probabilities to these values:  
 - Priors:  
-$P(S) = 0.7$  
-$P(R) = 0.01$  
+P(S)=0.7  
+P(R)=0.01
 
 - CPD table:
 
@@ -29,8 +29,8 @@ F | T | T | 0.9
 T | F | T | 0.7
 F | F | T | 0.1
 
-#### Before knowing about the wheather, $P(R \vert H)$
-First let's look at $P(R \vert H)$, which is the probability of the guy getting a raise given he is happy (without knowing if today is a sunny day).  
+#### Before knowing about the wheather, P(R|H)
+First let's look at P(R|H), which is the probability of the guy getting a raise given he is happy (without knowing if today is a sunny day).  
 ```python
 def P_R_given_H(P_S,
                 P_R,
@@ -48,8 +48,8 @@ Now if we use the CPD table given above, we get
 P(R|H) is 0.018494
 ```  
 
-#### After checking out it is sunny, $P(R \vert S, H)$
-Next if we now already know today is a sunny day, let's look at $P(R \vert S, H)$:  
+#### After checking out it is sunny, P(R|S,H)
+Next if we now already know today is a sunny day, let's look at P(R|S,H):  
 ```python
 def P_R_given_S_H(P_S,
                   P_R,
@@ -69,11 +69,11 @@ P(R|S, H) is 0.014225
 
 #### Explaining-away just happened!
 _so we can see that  
-$P(R\vert S, H) < P(R\vert H)$  
-which is saying after knowing today is sunny, the probability of the guy getting raised gets smaller so that $R$ got **explained away!**_  
+P(R|S,H)<P(R|H)  
+which is saying after knowing today is sunny, the probability of the guy getting raised gets smaller so that R got **explained away!**_  
 
 #### Further analysis
-By some simple mathematical transformation by applying the bayes rule and full probability formula, we found that $P(R\vert S, H) < P(R\vert H)$ satisfies iff our CPD tables satisfies $P(H\vert S, R) \cdot P(H\vert \neg S, \neg R) > P(H\vert S, \neg R) \cdot P(H\vert \neg S, R)$.  
+By some simple mathematical transformation by applying the bayes rule and full probability formula, we found that P(R|S,H) < P(R|H) satisfies iff our CPD tables satisfies P(H|S,R)⋅P(H|¬S,¬R) > P(H|S,¬R)⋅P(H|¬S,R).
 Let's test this by a counterexample concrete CPD table.  
 
 Sunny | Raised | Happy | $P$
@@ -90,4 +90,5 @@ P(R|S, H) is 0.809249
 ```
 
 #### Final remarks
-In practice, it is usually more natural to encode positively influential events in a intercausal reasoning networks. So we should have $P(H\vert S, R) > 0.5$, $P(H\vert \neg S, R) > 0.5$ and $P(H\vert S, \neg R) > 0.5$ at the same time. And usually we also have $P(H\vert S, R)$ being the biggest one. So we have $P(H\vert S, \neg R) \cdot P(H\vert \neg S, R) > 0.25$. Also, the prior of the effect (in our example is $P(H)$) tends to be small, because if it is a big prior, there is less reason we want a model to predict its happening. Note that $P(H\vert \neg S, \neg R)$ is comparable with $P(H)$. So if the prior $P(H) < 0.25$, then the relation $P(H\vert S, R) \cdot P(H\vert \neg S, \neg R) > P(H\vert S, \neg R) \cdot P(H\vert \neg S, R)$ satisfies immediately. So in most cases, explaining away happens in a positive direction.
+In practice, it is usually more natural to encode positively influential events in a intercausal reasoning networks. So we should have P(H|S,R)>0.5, P(H|¬S,R)>0.5 and P(H|S,¬R)>0.5 at the same time. And usually we also have P(H|S,R) being the biggest one. So we have P(H|S,¬R)⋅P(H|¬S,R) > 0.25.  
+Also, the prior of the effect (in our example is P(H)) tends to be small, because if it is a big prior, there is less reason we want a model to predict its happening. Note that P(H|¬S,¬R) is comparable with P(H). So if the prior  P(H) < 0.25, then the relation P(H|S,R)⋅P(H|¬S,¬R) > P(H|S,¬R)⋅P(H|¬S,R) satisfies immediately. So in most cases, explaining away happens in a positive direction.
