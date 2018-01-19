@@ -13,7 +13,7 @@ tags:
 ---
 
 ### Explore the phenomenon of "explaining away"
-First, let's consider a simple example, where a guy's happiness ($H$) can be caused by either a raise in his company ($R$) or a sunny day ($S$), and assuming the priors of $R$ and $S$ are independent.  
+First, let's consider a simple example, where a guy's happiness (H) can be caused by either a raise in his company (R) or a sunny day (S), and assuming the priors of R and S are independent.  
 
 Now if we set the probabilities to these values:  
 - Priors:  
