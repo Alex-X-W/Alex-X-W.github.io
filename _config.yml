@@ -66,7 +66,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                          # whether or not using Sidebar.
-sidebar-about-description: "采药过溪东, 向晚日正浓<br>绿草风吹动, 彤云入山中"
+sidebar-about-description: "采药自溪东, 向晚日正浓<br>绿草风吹过, 彤云入山中"
 sidebar-avatar: /img/side_bar_profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
