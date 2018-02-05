@@ -72,8 +72,8 @@ _so we can see that
 P(R|S,H)<P(R|H)  
 which is saying after knowing today is sunny, the probability of the guy getting raised gets smaller so that R got **explained away!**_  
 
-#### Further analysis
-By some simple mathematical transformation by applying the bayes rule and full probability formula, we found that P(R|S,H) < P(R|H) satisfies iff our CPD tables satisfies P(H|S,R)⋅P(H|¬S,¬R) > P(H|S,¬R)⋅P(H|¬S,R).
+#### A counter example - 'explaining-closer'
+By some simple mathematical transformation using the bayes rule and full probability formula, we found that P(R|S,H) < P(R|H) can happen iff the CPD tables satisfies P(H|S,R)⋅P(H|¬S,¬R) > P(H|S,¬R)⋅P(H|¬S,R).
 Let's test this by a counterexample concrete CPD table.  
 
 Sunny | Raised | Happy | $P$
