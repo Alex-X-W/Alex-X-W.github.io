@@ -33,7 +33,7 @@ My model is a reimplementation of [Sequential Matching Networks](http://www.aclw
   
 
 ## 2. Corpus Preparation
-### 2.1 Munging
+### 2.1 Wrangling
 What we have is historical dumped dialog data, cleansing works include(non-exhaustively):  
 * remove {illegal chars, timestamps/sys log/ID info or other tags, ...}  
 * combine consecutive utterances from the same ID into the one  
