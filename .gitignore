@@ -4,6 +4,6 @@ node_modules
 */.DS_Store
 */*/.DS_Store
 *.sh
+to_post_list.txt
 
-
-HuxTutorial.md
+./_posts/2017-11-18-unsupervised_nlp.markdown
