@@ -4,7 +4,7 @@ title:      "Convex optimization review"
 subtitle:   "just to connect some dots"
 date:       2018-08-30
 author:     "Xuan"
-header-img: "img/in-post/4/header.jpeg"
+header-img: "img/in-post/5/header.jpeg"
 header-mask: 0.3
 catalog:    true
 mathjax:    true
@@ -54,7 +54,7 @@ If there is a **strictly feasible** point, meaning one such point that all the i
 
 Sketch of proof:
 
-Consider $\mathcal A = \{ (f(x)^T, h(x)^T, f_0(x))\, \vert \, x\in \mathcal D\} + \mathbf{R}_+^m \times \{0\}  \times \mathbf{R}_+$ 
+Consider $\mathcal A = \{ (f(x)^T, h(x)^T, f_0(x))\, \vert \, x \in \mathcal D\} + \mathbf R_+^m \times \{0\}  \times \mathbf R_+$ 
 
 and $\mathcal B = \{(u, v, t)\, \vert \, u=0, v = 0, t \lt p^\ast \}$.
 
@@ -203,13 +203,13 @@ $\min_z f(Fz+x_0)$.
 
   - **Dual decomposition**
 
-    If the primal objective $f$ is separable in $x$, then $x^k =\text{argmin}_xL(x, y^k)$ step can be decomposed into $x_i^k =\text{argmin}_{x_i} L_i(x_i, y^k)$. Note that all the $x_i^k$ are evaluated in parallel holding other components constant as from $x^k$.
+    If the primal objective $f$ is separable in $x$, then $x^k =\arg \min_xL(x, y^k)$ step can be decomposed into $x_i^k =\arg\min_{x_i} L_i(x_i, y^k)$. Note that all the $x_i^k$ are evaluated in parallel holding other components constant as from $x^k$.
 
   - **Augmented Lagrangian and the method of multipliers**
 
     Still for the same linear equality constrained problem, one injects into the Lagrangian a penalty term for the residual of the equality constraint
 
-    $L_\rho(x, y) = L(x, y) + (\rho/2) \vert \vertAx-b\vert \vert^2$
+    $L_\rho(x, y) = L(x, y) + (\rho/2) \vert \vert Ax-b\vert \vert^2$
 
     The algorithm is similar to dual ascend but set $\alpha=\rho$.
 
@@ -246,9 +246,9 @@ The algorithm:
 Repeat **until** $Ax = b$ and $r(x, \nu) \le \epsilon$
 
 - Compute primal and dual Newton steps $\Delta x$ and $\Delta \nu$. The dual step $\Delta \nu$ is the solution to (1) minus the previous $\nu$.
-- Backtrack on $\vert \vertr\vert \vert_2$. $r$ is the primal-dual residual $\begin{pmatrix} \nabla f(x)+A^Tb \\ Ax-b \end{pmatrix}$
+- Backtrack on $\vert \vert r \vert \vert_2$. $r$ is the primal-dual residual $\begin{pmatrix} \nabla f(x)+A^Tb \\ Ax-b \end{pmatrix}$
   - $t \leftarrow 1$
-  - while $\vert \vertr(x+t\Delta x, \nu + t\Delta \nu)\vert \vert_2\gt (1-\alpha t)\vert \vertr(x, \nu)\vert \vert_2$, do $t \leftarrow \beta t$
+  - while $\vert \vert r(x+t\Delta x, \nu + t\Delta \nu)\vert \vert_2\gt (1-\alpha t)\vert \vert r(x, \nu)\vert \vert_2$, do $t \leftarrow \beta t$
 
 
 - $x \leftarrow x+t\Delta x$, $\nu \leftarrow \nu + \Delta \nu$
