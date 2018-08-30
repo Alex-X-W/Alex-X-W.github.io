@@ -54,9 +54,9 @@ If there is a **strictly feasible** point, meaning one such point that all the i
 
 Sketch of proof:
 
-Consider $\mathcal A = \{ (f(x)^T, h(x)^T, f_0(x))\, \vert \, x \in \mathcal D\} + \mathbf R_+^m \times \{0\}  \times \mathbf R_+$ 
+Consider $\mathcal A = \\{ (f(x)^T, h(x)^T, f_0(x))\, \vert \, x \in \mathcal D\\} + \mathbf R_+^m \times \\{0\\}  \times \mathbf R_+$ 
 
-and $\mathcal B = \{(u, v, t)\, \vert \, u=0, v = 0, t \lt p^\ast \}$.
+and $\mathcal B = \\{(u, v, t)\, \vert \, u=0, v = 0, t \lt p^\ast \\}$.
 
 Then apply separating hyperplane theorum. The strictly feasible point is used to ensure that the hyperplane is non-vertical thus won't pass thru $\mathcal B$.
 
@@ -209,7 +209,7 @@ $\min_z f(Fz+x_0)$.
 
     Still for the same linear equality constrained problem, one injects into the Lagrangian a penalty term for the residual of the equality constraint
 
-    $L_\rho(x, y) = L(x, y) + (\rho/2) \vert \vert Ax-b\vert \vert^2$
+    $L_\rho(x, y) = L(x, y) + (\rho/2) \Vert Ax-b\Vert^2$
 
     The algorithm is similar to dual ascend but set $\alpha=\rho$.
 
@@ -246,9 +246,9 @@ The algorithm:
 Repeat **until** $Ax = b$ and $r(x, \nu) \le \epsilon$
 
 - Compute primal and dual Newton steps $\Delta x$ and $\Delta \nu$. The dual step $\Delta \nu$ is the solution to (1) minus the previous $\nu$.
-- Backtrack on $\vert \vert r \vert \vert_2$. $r$ is the primal-dual residual $\begin{pmatrix} \nabla f(x)+A^Tb \\ Ax-b \end{pmatrix}$
+- Backtrack on $\Vert r \Vert_2$. $r$ is the primal-dual residual $$\begin{pmatrix} \nabla f(x)+A^Tb \\ Ax-b \end{pmatrix}$$
   - $t \leftarrow 1$
-  - while $\vert \vert r(x+t\Delta x, \nu + t\Delta \nu)\vert \vert_2\gt (1-\alpha t)\vert \vert r(x, \nu)\vert \vert_2$, do $t \leftarrow \beta t$
+  - while $\Vert r(x+t\Delta x, \nu + t\Delta \nu)\Vert_2\gt (1-\alpha t)\Vert r(x, \nu)\Vert_2$, do $t \leftarrow \beta t$
 
 
 - $x \leftarrow x+t\Delta x$, $\nu \leftarrow \nu + \Delta \nu$
@@ -327,11 +327,11 @@ $\phi(x) = 1/2 x^TAx - b^Tx$
 
 - **$Q$-Conjugate**
 
-  $\{d_1, …, d_n\}$ are said to be $Q$-conjugate/orthogonal if $d_i^TQd_j =0$ for any $i \neq j$.
+  $\\{d_1, …, d_n\\}$ are said to be $Q$-conjugate/orthogonal if $d_i^TQd_j =0$ for any $i \neq j$.
 
 - **Conjugate direction theorum**
 
-  Let a set of *given* vectors $\{d_1, …, d_n\}$ be $Q$-conjugate, denoted as $\perp^{(Q)}$, and $x_0$ be arbitrary starting point, then after $n$ steps of the following process, $x_n = x^\ast$:
+  Let a set of *given* vectors $\\{d_1, …, d_n\\}$ be $Q$-conjugate, denoted as $\perp^{(Q)}$, and $x_0$ be arbitrary starting point, then after $n$ steps of the following process, $x_n = x^\ast$:
 
   - $x_{k+1} = x_k + \alpha_k d_k$
   - $g_k = Qx_k - b$
@@ -339,7 +339,7 @@ $\phi(x) = 1/2 x^TAx - b^Tx$
 
   Remark:
 
-  This is essentially factorizing $x^\ast - x_0$ into the $Q$-conjugate basis $\{d_1, …, d_n\}$ sequentially. $\alpha_k$ corresponds to the "coordinate" under the $Q$-conjugate basis in the sense that:
+  This is essentially factorizing $x^\ast - x_0$ into the $Q$-conjugate basis $\\{d_1, …, d_n\\}$ sequentially. $\alpha_k$ corresponds to the "coordinate" under the $Q$-conjugate basis in the sense that:
 
   $\frac{(x^\ast - x_0)^TQd_k}{d_k^T Q d_k} = \frac{(x^\ast - x_k)^TQd_k}{d_k^T Q d_k} = \alpha_k$, since 
 
@@ -363,11 +363,11 @@ $\phi(x) = 1/2 x^TAx - b^Tx$
 
   Remark:
 
-  To verify the correctness, observing that conjugate direction theorum holds for any basis, one only needs to show that the $\{d_k\}$ constructed by the conjugate gradient algorithm is indeed $Q$-conjugate.
+  To verify the correctness, observing that conjugate direction theorum holds for any basis, one only needs to show that the $\\{d_k\\}$ constructed by the conjugate gradient algorithm is indeed $Q$-conjugate.
 
   In the induction step of the proof, it is sufficient to show that both of the following hold:
 
   1. $d_{k+1} \perp^{(Q)} d_k$
-  2. $g_{k+1} \perp^{(Q)} \{d_{i<k+1}\}$
+  2. $g_{k+1} \perp^{(Q)} \\{d_{i<k+1}\\}$
 
   the first one is straightforward, the second is the same as in the remark in the conjugate direction theorum section.
