@@ -10,7 +10,7 @@ catalog:    true
 mathjax:    true
 multilingual: false
 tags:
-    - pgm
+    - optimization
 ---
 
 *TODO: 1) Convergence analysis 2) interior point primal dual method*
@@ -21,7 +21,7 @@ tags:
 
 #### Separating hyperplane theorum
 
-If two convex sets, $A$ and $B$ are disjoint, then there exists a hyperplane separates the two, i.e., there exist $a$ and $b$ such that $a^T x\le b$ for all $x$ in $A$ and $a^T x \ge b$ for all $x$ in $B$.
+If two convex sets, $A​$ and $B​$ are disjoint, then there exists a hyperplane separates the two, i.e., there exist $a​$ and $b​$ such that $a^T x\le b​$ for all $x​$ in $A​$ and $a^T x \ge b​$ for all $x​$ in $B​$.
 
 #### Supporting hyperplane theorum
 
