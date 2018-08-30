@@ -219,7 +219,7 @@ $\min_z f(Fz+x_0)$.
 
 #### Primal method: extension of Newton's method
 
-#####Feasible starting point method
+##### Feasible starting point method
 
 Using second order approximation to primal objective at a point $x$ yields
 
@@ -229,13 +229,13 @@ The method starts with a feasible $x^{(0)}$, and $\Delta x$ update preserves the
 
 Note that $A(x+\nu)=b\, \Rightarrow A\nu=0$. The Newton step $\Delta x$ is then taken as the solution to the second order approximation problem, which is also the solution of the KKT condition equations
 
-$\begin{pmatrix} \nabla^2f(x) & A^T \\ A & 0 \end{pmatrix} \begin{pmatrix} \Delta x \\ \nu \end{pmatrix} = \begin{pmatrix} - \nabla f(x) \\ 0 \end{pmatrix}$.
+$$\begin{pmatrix} \nabla^2f(x) & A^T \\ A & 0 \end{pmatrix} \begin{pmatrix} \Delta x \\ \nu \end{pmatrix} = \begin{pmatrix} - \nabla f(x) \\ 0 \end{pmatrix}$$.
 
 ##### Infeasible starting point method
 
 With a infeasible start point, we make updates to best approximate feasibility and satisfies the optimal conditions.
 
-$\begin{pmatrix} \nabla^2f(x) & A^T \\ A & 0 \end{pmatrix} \begin{pmatrix} \Delta x \\ \nu \end{pmatrix} = - \begin{pmatrix} \nabla f(x) \\ Ax-b \end{pmatrix} \tag{1}$
+$$\begin{pmatrix} \nabla^2f(x) & A^T \\ A & 0 \end{pmatrix} \begin{pmatrix} \Delta x \\ \nu \end{pmatrix} = - \begin{pmatrix} \nabla f(x) \\ Ax-b \end{pmatrix} \tag{1}$$
 
 Remark:
 
@@ -323,7 +323,7 @@ $Ax=b$, where $A$ is PSD, to find the solution $x^\ast$ is equivalent to find a 
 
 $\phi(x) = 1/2 x^TAx - b^Tx$
 
-####Conjugate gradient method - [ref](http://www.cs.cmu.edu/~pradeepr/convexopt/Lecture_Slides/conjugate_direction_methods.pdf)
+#### Conjugate gradient method - [ref](http://www.cs.cmu.edu/~pradeepr/convexopt/Lecture_Slides/conjugate_direction_methods.pdf)
 
 - **$Q$-Conjugate**
 
