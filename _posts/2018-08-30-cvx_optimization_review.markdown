@@ -357,9 +357,9 @@ $$\phi(x) = 1/2 x^TAx - b^Tx$$
 
   *but with additional $$d_k$$ calculation*
 
-  - $$d_0 = b - Qx_0$$
-  - $$d_{k+1} = -g_{k+1} + \beta_kd_k$$
-  - $$\beta_k = \frac{g_{k+1}^TQd_k}{d_k^TQd_k}$$
+  - \(d_0 = b - Qx_0\)
+  - \(d_{k+1} = -g_{k+1} + \beta_kd_k\)
+  - \(\beta_k = \frac{g_{k+1}^TQd_k}{d_k^TQd_k}\)
 
   Remark:
 
