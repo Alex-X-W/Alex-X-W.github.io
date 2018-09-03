@@ -68,17 +68,17 @@ $$
 
 Risk
 $$
-\begin{align}
-R(f) &= \mathbb E [(f(x) - y)^2] \\;	 &= \mb{E} [(f(x) - \mb{E}[y|x])^2] + \mb{E} [(y - \mb{E}[y|x])^2]
-\end{align}
+\begin{align*}
+R(f) &= \mathbb E [(f(x) - y)^2] &= \mb{E} [(f(x) - \mb{E}[y|x])^2] + \mb{E} [(y - \mb{E}[y|x])^2]
+\end{align*}
 $$
 The second equation is because
 
-$\mb{E}_\mc{Y} [(f(x) - \mb{E}[y|x])(\mb{E}[y|x] - y)] = (f(x) - \mb{E}[y|x])\mb{E}_\mc{Y} [\mb{E} [y|x] - y] = (f(x) - \mb{E}[y|x]) \cdot 0 = 0$
+$\mb{E}_\mc{Y} [(f(x) - \mb{E}[y\vert x])(\mb{E}[y\vert x] - y)] = (f(x) - \mb{E}[y\vert x])\mb{E}_\mc{Y} [\mb{E} [y\vert x] - y] = (f(x) - \mb{E}[y\vert x]) \cdot 0 = 0$
 
 So the Bayes prediction function is:
 $$
-f^\ast(x) = \mb{E}[y|x]
+f^\ast(x) = \mb{E}[y\vert x]
 $$
 
 
@@ -90,7 +90,7 @@ Since we don't know $P_{\mc{X} \times \mc{Y}}$, we can not compute the risk, nei
 
 $\hat {R}_n (f) = \frac{1}{n} \sum_i l(f(x_i), y_i)$
 
-By the Strong law of large numbers, $\lim_{n \rightarrow \infin} \hat R_n(f) = R(f)$ almost surely (i.e. with probability 1).
+By the Strong law of large numbers, $\lim_{n \rightarrow \infty} \hat R_n(f) = R(f)$ almost surely (i.e. with probability 1).
 
 **Empirical risk minimizer**
 
