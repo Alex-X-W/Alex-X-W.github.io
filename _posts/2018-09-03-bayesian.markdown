@@ -50,7 +50,7 @@ Introduces a new distribution before seeing any data: the **prior**, $p(\theta)$
 
 A (parametric) bayesian model consists of two folds:
 
-- A parametric family of densities: $\mc{P}_{\Theta}} = \\{ p(y\vert\theta) \;\vert \;\theta \in \Theta\\}$
+- A parametric family of densities: $\mc{P}_{\Theta} = \\{ p(y\vert\theta) \;\vert \;\theta \in \Theta\\}$
 - A prior distribution: $p(\theta)$
 
 With the two folds combined, we have a joint density: $p(\mc{D}, \theta) = p(\mc{D} \vert \theta)p(\theta)$.
@@ -65,7 +65,7 @@ The **posterior distribution** for $\theta$ is $p(\theta \vert \mc{D})$, which r
 
 Let $\pi = \\{ p(\theta) \vert \theta \in \Theta \\} = \\{ p(\cdot) : \Theta \rightarrow [0, 1] \\}$, i.e. a family of prior distributions on $\Theta$.
 
-And $\mc{P}_{\Theta} = \\{ p(y|\theta) \;\vert \;\theta \in \Theta\\} = \\{ p(\cdot \vert \theta):\mc{Y} \rightarrow [0, 1] \\}$, i.e. the parametric family of our model.
+And $\mc{P}_{\Theta} = \\{ p(y\vert\theta) \;\vert \;\theta \in \Theta\\} = \\{ p(\cdot \vert \theta):\mc{Y} \rightarrow [0, 1] \\}$, i.e. the parametric family of our model.
 
 $\pi$ is **conjugate to** parametric family/model $\mc{P}_\Theta$ if for any prior in $\pi$, the posterior is still in $\pi$.
 
