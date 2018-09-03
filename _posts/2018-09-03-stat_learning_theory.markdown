@@ -66,17 +66,14 @@ $$
 - Spaces: $\mc{A} = \mc{Y} = \mc{R}$
 - Loss: $l(a, y) = (a-y)^2$
 
-Risk
+Risk  
 $$
 \begin{align*}
 R(f) &= \mathbb E [(f(x) - y)^2] \\ &= \mb{E} [(f(x) - \mb{E}[y\vert x])^2] + \mb{E} [(y - \mb{E}[y\vert x])^2]
 \end{align*}
 $$
-The second equation is because
 
-$\mb{E}_{\mc{Y}} [(f(x) - \mb{E}[y\vert x])(\mb{E}[y\vert x] - y)] = (f(x) - \mb{E}[y\vert x])\mb{E}_{\mc{Y}} [\mb{E} [y\vert x] - y] = (f(x) - \mb{E}[y\vert x]) \cdot 0 = 0$
-
-So the Bayes prediction function is:
+So the Bayes prediction function is:  
 $$
 f^\ast(x) = \mb{E}[y\vert x]
 $$
