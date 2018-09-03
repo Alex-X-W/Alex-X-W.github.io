@@ -3,9 +3,10 @@ layout:     post
 title:      "ML notes: Bayesian"
 date:       2018-09-03
 author:     "Xuan"
-header-img: "img/in-post/4/header.jpeg"
+header-img: "img/in-post/6/header.jpeg"
 header-mask: 0.3
 catalog:    true
+mathjax:    true
 multilingual: false
 tags:
     - machine learning
