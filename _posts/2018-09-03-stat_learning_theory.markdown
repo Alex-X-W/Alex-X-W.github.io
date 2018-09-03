@@ -69,12 +69,12 @@ $$
 Risk
 $$
 \begin{align*}
-R(f) &= \mathbb E [(f(x) - y)^2] &= \mb{E} [(f(x) - \mb{E}[y|x])^2] + \mb{E} [(y - \mb{E}[y|x])^2]
+R(f) &= \mathbb E [(f(x) - y)^2] \\ &= \mb{E} [(f(x) - \mb{E}[y\vert x])^2] + \mb{E} [(y - \mb{E}[y\vert x])^2]
 \end{align*}
 $$
 The second equation is because
 
-$\mb{E}_\mc{Y} [(f(x) - \mb{E}[y\vert x])(\mb{E}[y\vert x] - y)] = (f(x) - \mb{E}[y\vert x])\mb{E}_\mc{Y} [\mb{E} [y\vert x] - y] = (f(x) - \mb{E}[y\vert x]) \cdot 0 = 0$
+$\mb{E}_{\mc{Y}} [(f(x) - \mb{E}[y\vert x])(\mb{E}[y\vert x] - y)] = (f(x) - \mb{E}[y\vert x])\mb{E}_{\mc{Y}} [\mb{E} [y\vert x] - y] = (f(x) - \mb{E}[y\vert x]) \cdot 0 = 0$
 
 So the Bayes prediction function is:
 $$
