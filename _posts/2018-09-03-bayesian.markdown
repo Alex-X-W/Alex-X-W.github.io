@@ -16,18 +16,18 @@ $\newcommand{\mc}{\mathcal} \newcommand{\mb}{\mathbb}$
 
 ## Classic statistics notions
 
-The world is in a **parametric (density) family** $\mc P_{\Theta} = \{ p(y|\theta) \ \vert \ \theta \in \Theta\}$, while the true $\theta$ is hidden. We have a dataset $\mc D$ within which the sample points are drawn i.i.d. $p(y|\theta)$.
+The world is in a **parametric (density) family** $\mc P_{\Theta} = \{ p(y \ver t\theta) \ \vert \ \theta \in \Theta\}$, while the true $\theta$ is hidden. We have a dataset $\mc D$ within which the sample points are drawn i.i.d. $p(y \vert \theta)$.
 
 
 
-The density for $\mc D$ under $\theta$ is: $p(\mc D \vert \theta) = \prod_i p(y_i \vert \theta)$.
+The density for $\mc{D}$ under $\theta$ is: $p(\mc{D} \vert \theta) = \prod_i p(y_i \vert \theta)$.
 
-- For fixed $\theta$, $p(\mc D \vert \theta)$ is a density function on $\mc Y^n$
-- For fixed $\mc D$, the function $\theta \mapsto p(\mc D \vert \theta)$ is the **likelihood**: $L_{\mc D}(\theta) = p(\mc D \vert \theta)$
+- For fixed $\theta$, $p(\mc{D} \vert \theta)$ is a density function on $\mc Y^n$
+- For fixed $\mc{D}$, the function $\theta \mapsto p(\mc D \vert \theta)$ is the **likelihood**: $L_{\mc D}(\theta) = p(\mc D \vert \theta)$
 
 
 
-The whole story of modeling and learning is about designing good a **statistic/point estimator of $\theta$** $\hat \theta = \hat \theta(\mc D)$ and computing an optimal.
+The whole story of modeling and learning is about designing good a **statistic/point estimator of $\theta$**, $\hat \theta = \hat \theta(\mc D)$ and computing an optimal.
 
 
 
@@ -50,7 +50,7 @@ Introduces a new distribution before seeing any data: the **prior**, $p(\theta)$
 
 A (parametric) bayesian model consists of two folds:
 
-- A parametric family of densities: $\mc P_{\Theta} = \{ p(y|\theta) \ \vert \ \theta \in \Theta\}$
+- A parametric family of densities: $\mc P_{\Theta} = \{ p(y\vert\theta) \ \vert \ \theta \in \Theta\}$
 - A prior distribution: $p(\theta)$
 
 With the two folds combined, we have a joint density: $p(\mc D, \theta) = p(\mc D \vert \theta)p(\theta)$.
@@ -117,7 +117,7 @@ If the action space $\mc A = \Theta$, i.e. we are estimating the parameter $\the
 ## Steps of Bayesian method
 
 - **Define the model**
-  - choose a parametric family $\mc P_{\Theta} = \{ p(y|\theta) \ \vert \ \theta \in \Theta\}$
+  - choose a parametric family $\mc P_{\Theta} = \{ p(y \vert \theta) \ \vert \ \theta \in \Theta\}$
   - choose a prior: $p(\theta)$
 - **Compute posterior**: $p(\theta \vert \mc D)$
 - **Make decision**
