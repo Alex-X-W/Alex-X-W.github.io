@@ -16,18 +16,18 @@ $\newcommand{\mc}{\mathcal} \newcommand{\mb}{\mathbb}$
 
 ## Classic statistics notions
 
-The world is in a **parametric (density) family** $\mc P_{\Theta} = \{ p(y \ver t\theta) \ \vert \ \theta \in \Theta\}$, while the true $\theta$ is hidden. We have a dataset $\mc D$ within which the sample points are drawn i.i.d. $p(y \vert \theta)$.
+The world is in a **parametric (density) family** $\mc{P}_{\Theta} = \\{ p(y \ver t\theta) \ \vert \ \theta \in \Theta\\}$, while the true $\theta$ is hidden. We have a dataset $\mc{D}$ within which the sample points are drawn i.i.d. $p(y \vert \theta)$.
 
 
 
 The density for $\mc{D}$ under $\theta$ is: $p(\mc{D} \vert \theta) = \prod_i p(y_i \vert \theta)$.
 
-- For fixed $\theta$, $p(\mc{D} \vert \theta)$ is a density function on $\mc Y^n$
-- For fixed $\mc{D}$, the function $\theta \mapsto p(\mc D \vert \theta)$ is the **likelihood**: $L_{\mc D}(\theta) = p(\mc D \vert \theta)$
+- For fixed $\theta$, $p(\mc{D} \vert \theta)$ is a density function on $\mc{Y}^n$
+- For fixed $\mc{D}$, the function $\theta \mapsto p(\mc{D} \vert \theta)$ is the **likelihood**: $L_{\mc{D}(\theta) = p(\mc{D} \vert \theta)$
 
 
 
-The whole story of modeling and learning is about designing good a **statistic/point estimator of $\theta$**, $\hat \theta = \hat \theta(\mc D)$ and computing an optimal.
+The whole story of modeling and learning is about designing good a **statistic/point estimator of $\theta$**, $\hat \theta = \hat \theta(\mc{D})$ and computing an optimal.
 
 
 
@@ -38,9 +38,9 @@ The whole story of modeling and learning is about designing good a **statistic/p
 
 
 
-The **maximum likelihood estimator (MLE)** for $\theta$ in $\mc P_{\Theta}$ is:
+The **maximum likelihood estimator (MLE)** for $\theta$ in $\mc{P}_{\Theta}$ is:
 $$
-\hat \theta_{\text{MLE}} = \arg \max_{\theta \in \Theta} L_{\mc D}(\theta) \tag{1}
+\hat \theta_{\text{MLE}} = \arg \max_{\theta \in \Theta} L_{\mc{D}(\theta) \tag{1}
 $$
 
 
@@ -50,24 +50,24 @@ Introduces a new distribution before seeing any data: the **prior**, $p(\theta)$
 
 A (parametric) bayesian model consists of two folds:
 
-- A parametric family of densities: $\mc P_{\Theta} = \{ p(y\vert\theta) \ \vert \ \theta \in \Theta\}$
+- A parametric family of densities: $\mc{P}_{\Theta}} = \\{ p(y\vert\theta) \ \vert \ \theta \in \Theta\\}$
 - A prior distribution: $p(\theta)$
 
-With the two folds combined, we have a joint density: $p(\mc D, \theta) = p(\mc D \vert \theta)p(\theta)$.
+With the two folds combined, we have a joint density: $p(\mc{D}, \theta) = p(\mc{D} \vert \theta)p(\theta)$.
 
 
 
-The **posterior distribution** for $\theta$ is $p(\theta \vert \mc D)$, which represents the **rationally updated belief** about $\theta$ after seeing $\mc D$, while the prior is the **initial belief** before seeing $\mc D$.
+The **posterior distribution** for $\theta$ is $p(\theta \vert \mc{D})$, which represents the **rationally updated belief** about $\theta$ after seeing $\mc{D}$, while the prior is the **initial belief** before seeing $\mc{D}$.
 
 
 
 ### Conjugate prior
 
-Let $\pi = \{ p(\theta) \vert \theta \in \Theta \} = \{ p(\cdot) : \Theta \rightarrow [0, 1] \}$, i.e. a family of prior distributions on $\Theta$.
+Let $\pi = \\{ p(\theta) \vert \theta \in \Theta \\} = \\{ p(\cdot) : \Theta \rightarrow [0, 1] \\}$, i.e. a family of prior distributions on $\Theta$.
 
-And $\mc P_{\Theta} = \{ p(y|\theta) \ \vert \ \theta \in \Theta\} = \{ p(\cdot \vert \theta):\mc Y \rightarrow [0, 1] \}$, i.e. the parametric family of our model.
+And $\mc{P}_{\Theta} = \\{ p(y|\theta) \ \vert \ \theta \in \Theta\\} = \\{ p(\cdot \vert \theta):\mc{Y} \rightarrow [0, 1] \\}$, i.e. the parametric family of our model.
 
-$\pi$ is **conjugate to** parametric family/model $\mc P_\Theta$ if for any prior in $\pi$, the posterior is still in $\pi$.
+$\pi$ is **conjugate to** parametric family/model $\mc{P}_\Theta$ if for any prior in $\pi$, the posterior is still in $\pi$.
 
 e.g.
 
@@ -83,8 +83,8 @@ e.g.
 
 Common options:
 
-- **posterior mean**: $\hat \theta = \mb E[\theta \vert \mc D]$
-- **maximum a posteriori(MAP)**: $\hat \theta = \arg \max_\theta p(\theta \vert \mc D)$
+- **posterior mean**: $\hat \theta = \mb E[\theta \vert \mc{D}]$
+- **maximum a posteriori(MAP)**: $\hat \theta = \arg \max_\theta p(\theta \vert \mc{D})$
   - which is also the **mode** of the posterior distribution
 
 
@@ -95,10 +95,10 @@ Ingredients:
 
 - parameter space: $\Theta$
 - prior: $p(\theta)$
-- action space: $\mc A$
-- loss: $l: \mc A \times \Theta \rightarrow \mathbf R$
+- action space: $\mc{A}$
+- loss: $l: \mc{A} \times \Theta \rightarrow \mathbf R$
 
-The **posterior risk** of an action $a \in \mc A$ is: $r(a) = \mb E[l(a, \theta)\vert \mc D] = \int l(a, \theta)p(\theta \vert \mc D) d\theta$, i.e. the expected loss under the posterior.
+The **posterior risk** of an action $a \in \mc{A}$ is: $r(a) = \mb E[l(a, \theta)\vert \mc{D}] = \int l(a, \theta)p(\theta \vert \mc{D}) d\theta$, i.e. the expected loss under the posterior.
 
 A **Bayes action** $a^\ast$ is an action that minimizes $r(a)$.
 
@@ -106,7 +106,7 @@ A **Bayes action** $a^\ast$ is an action that minimizes $r(a)$.
 
 **Example**
 
-If the action space $\mc A = \Theta$, i.e. we are estimating the parameter $\theta$.
+If the action space $\mc{A} = \Theta$, i.e. we are estimating the parameter $\theta$.
 
 - squre loss $\Rightarrow$ posterior mean
 - absolute loss $\Rightarrow$ posterior median
@@ -117,9 +117,9 @@ If the action space $\mc A = \Theta$, i.e. we are estimating the parameter $\the
 ## Steps of Bayesian method
 
 - **Define the model**
-  - choose a parametric family $\mc P_{\Theta} = \{ p(y \vert \theta) \ \vert \ \theta \in \Theta\}$
+  - choose a parametric family $\mc{P}_{\Theta} = \\{ p(y \vert \theta) \ \vert \ \theta \in \Theta\\}$
   - choose a prior: $p(\theta)$
-- **Compute posterior**: $p(\theta \vert \mc D)$
+- **Compute posterior**: $p(\theta \vert \mc{D})$
 - **Make decision**
   - choose a loss $l(a, \theta)$
   - compute the Bayesian action $a^\ast​$ by minimizing the posterior risk
