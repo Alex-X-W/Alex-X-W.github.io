@@ -101,7 +101,7 @@ $$
 **(Dual)**
 $$
 \begin{align*}
-\arg \max_{a} & \ \ \sum_i a_i - \frac{1}{2} \sum_i \sum_j a_i a_j y_i y_j K(x_i, x_j)\tag{5}\\
+\arg \max_{a} & \ \ \sum_i a_i - \frac{1}{2} \sum_i \sum_j a_i a_j y_i y_j K(x_i, x_j)\tag{8}\\
 \text{subject to} & \ \ 0 \le a_i \le \lambda, \forall i  =1, ..., N \\
 			  & \ \ \sum_i a_i y_i = 0
 \end{align*}
