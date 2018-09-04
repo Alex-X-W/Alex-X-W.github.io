@@ -1,3 +1,17 @@
+---
+layout:     post
+title:      "ML notes: Kernel methods and SVM"
+date:       2018-09-04
+author:     "Xuan"
+header-img: "img/in-post/8/header.jpeg"
+header-mask: 0.3
+catalog:    true
+mathjax:    true
+multilingual: false
+tags:
+    - machine learning
+---
+
 $\newcommand{\ip}[2]{\langle #1, #2 \rangle}​$
 
 ## The Representer Theorum
@@ -38,18 +52,18 @@ By leveraging the freedom of rescaling we can constrain $y_i(w^T \psi(x_i)+b) \g
 
 **(Primal)**
 $$
-\begin{align}
+\begin{align*}
 \arg \min_{w, b} & \ \ \frac{1}{2}||w||^2 \tag{4}\\
 \text{subject to} & \ \ y_i (w^T \psi(x_i) + b) \ge 1, \forall i  =1, ..., N
-\end{align}
+\end{align*}
 $$
 **(Dual)**
 $$
-\begin{align}
+\begin{align*}
 \arg \max_{a} & \ \ \sum_i a_i - \frac{1}{2} \sum_i \sum_j a_i a_j y_i y_j K(x_i, x_j)\tag{5}\\
 \text{subject to} & \ \ a_i \ge 0, \forall i  =1, ..., N \\
 			  & \ \ \sum_i a_i y_i = 0
-\end{align}
+\end{align*}
 $$
 
 #### Remark
