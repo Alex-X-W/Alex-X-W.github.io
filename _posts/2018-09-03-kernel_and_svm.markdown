@@ -92,17 +92,17 @@ A relaxation to the hard SVM that it does not require a linear separable dataset
 
 **(Primal)**
 $$
-\begin{align}
+\begin{align*}
 \arg \min_{w, b, \xi} &\ \  (\frac{1}{2}||w||^2 + \lambda \sum_i \xi_i) \tag{7} \\
 \text{subject to} &\ \ y_i(w^T\psi(x_i) + b) \ge 1- \xi_i \\
 			  & \ \ \xi_i \ge 0
-\end{align}
+\end{align*}
 $$
 **(Dual)**
 $$
-\begin{align}
+\begin{align*}
 \arg \max_{a} & \ \ \sum_i a_i - \frac{1}{2} \sum_i \sum_j a_i a_j y_i y_j K(x_i, x_j)\tag{5}\\
 \text{subject to} & \ \ 0 \le a_i \le \lambda, \forall i  =1, ..., N \\
 			  & \ \ \sum_i a_i y_i = 0
-\end{align}
+\end{align*}
 $$
