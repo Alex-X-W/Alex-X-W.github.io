@@ -110,7 +110,7 @@ So in implementation the EM looks like:
 
 - In VAE, we assume the prior is an easy distribution which we can easily sample from, e.g. Gaussian or Uniform
 
-  Sampling: (1) draw $z \sim p(z)$; (2) draw $x \sim p(x|z; \theta)$
+  Sampling: (1) draw $z \sim p(z)$; (2) draw $x \sim p(x \vert z; \theta)$
 
   Learning: given $\mathcal D = \\{ x \\}$, learn a $q(z \vert x; \phi) \approx p(z\vert x; \theta)$ to draw $z$, and then use $p(x \vert z; \theta)$ to draw $x$
 
