@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "ML notes: Kernel methods and SVM"
+title:      "ML notes: Latent variable models"
 date:       2018-09-04
 author:     "Xuan"
 header-img: "img/in-post/9/header.jpeg"
