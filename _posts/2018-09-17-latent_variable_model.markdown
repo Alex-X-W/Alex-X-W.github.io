@@ -83,7 +83,10 @@ In EM, we iteratively maximize the ELBO over either $q$ or $\theta$ by holding t
 
 - $\arg \max_\theta L_q(\theta)$ for fixed $q$ - **M-step**
 
-  since $L_q(\theta) = \underbrace{\sum_z q(z) \log p(x, z; \theta)}_{\mathbb{E} [\text{complete data log-likelihood}]} - \underbrace{\sum_z q(z) \log q(z)}_{\text{no}\, \theta \, \text{involved}}$
+  since
+  $$
+  L_q(\theta) = \underbrace{\sum_z q(z) \log p(x, z; \theta)}_{\mathbb{E} [\text{complete data log-likelihood}]} - \underbrace{\sum_z q(z) \log q(z)}_{\text{no}\, \theta \, \text{involved}}
+  $$
 
   so only the first term, the expectation of the complete data log-likelihood, is relevant to maximization. So finding the $q$ in the other step is essentially used to compute the expectation, hence the name "E-step".
 
