@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "ML notes: Latent variable models"
-date:       2018-09-04
+date:       2018-09-17
 author:     "Xuan"
 header-img: "img/in-post/9/header.jpeg"
 header-mask: 0.3
