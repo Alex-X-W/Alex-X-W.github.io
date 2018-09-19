@@ -93,34 +93,44 @@ b) If $\tilde V \le \mc T \tilde V$, then $\tilde V \le V^\ast$.
 > a)
 >
 > For any $\pi = (d_1, d_2, ...)$,
+> 
 > $$
 > \begin{align*}
 > \tilde V &\ge \mc T \tilde V = \max_{d} [ R_d + \gamma \, P_d \tilde V] \\
 > &\ge R_{d_1} + \gamma \, P_{d_1} \tilde V \\
 > \end{align*}
 > $$
+> 
 > Here $d$ is the decision rule(action profile at specific time), $R_d$ is the vector representation of immediate reward induced from $d$ and $P_d$ is transition matrix induced from $d$. 
 >
 > By induction, for any $n$,
+> 
 > $$
 > \tilde V \ge R_{d_1} + \sum_{i=1}^{n-1} \gamma^i P_\pi^i R_{d_{i+1}} + \gamma^n P_\pi^n \tilde V
 > $$
+> 
 > where $P_\pi^j$ represents the $j$-step transition matrix under $\pi$.
 >
 > Since 
+> 
 > $$
 > V^\pi = R_{d_1} + \sum_{i=1}^{\infty}\gamma^i P_\pi^i R_{d_{i+1}}
 > $$
+> 
 > we have
+> 
 > $$
 > \tilde V - V^\pi \ge \underbrace{\gamma^n P_\pi^n \tilde V -\sum_{i=n}^{\infty}\gamma^i P_\pi^i R_{d_{i+1}}}_{\rightarrow 0 \ \text{as}\ n\rightarrow \infty}
 > $$
+> 
 > So we have $\tilde V \ge V^\pi$. And since this holds for any $n$, we conclude that
+> 
 > $$
 > \tilde V \ge \max_\pi V^\pi = V^\ast
 > $$
 > 
 > b)
+> 
 > Follows from step 1.
 
 #### 3
