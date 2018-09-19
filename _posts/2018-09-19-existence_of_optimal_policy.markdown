@@ -94,10 +94,10 @@ b) If $\tilde V \le \mc T \tilde V$, then $\tilde V \le V^\ast$.
 >
 > For any $\pi = (d_1, d_2, ...)$,
 > $$
-> \begin{align}
+> \begin{align*}
 > \tilde V &\ge \mc T \tilde V = \max_{d} [ R_d + \gamma \, P_d \tilde V] \\
 > &\ge R_{d_1} + \gamma \, P_{d_1} \tilde V \\
-> \end{align}
+> \end{align*}
 > $$
 > Here $d$ is the decision rule(action profile at specific time), $R_d$ is the vector representation of immediate reward induced from $d$ and $P_d$ is transition matrix induced from $d$. 
 >
@@ -119,8 +119,8 @@ b) If $\tilde V \le \mc T \tilde V$, then $\tilde V \le V^\ast$.
 > $$
 > \tilde V \ge \max_\pi V^\pi = V^\ast
 > $$
+> 
 > b)
->
 > Follows from step 1.
 
 #### 3
@@ -131,7 +131,7 @@ The optimal Bellman operator is a contraction in $L_\infty$ norm, cf. [2].
 >
 > For any $s$,
 > $$
-> \begin{align}
+> \begin{align*}
 > \left\vert \mc T V_1(s) - \mc TV_2(s) \right\vert 
 > &=
 > \left\vert \max_{a \in \mc A} [ R(s, a) + \gamma \, \sum_{s^\prime \in \mc S} T(s, a, s^\prime) V_1(s^\prime)] -\max_{a^\prime \in \mc A} [ R(s, a^\prime) + \gamma \, \sum_{s^\prime \in \mc S} T(s, a^\prime, s^\prime) V(s^\prime)]\right\vert \\
@@ -139,7 +139,7 @@ The optimal Bellman operator is a contraction in $L_\infty$ norm, cf. [2].
 > \left\vert \max_{a \in \mc A} [\gamma \, \sum_{s^\prime \in \mc S} T(s, a, s^\prime) (V_1(s^\prime) - V_2(s^\prime))] \right\vert \\
 > &\le
 > \gamma \Vert V_1 - V_2 \Vert_\infty
-> \end{align}
+> \end{align*}
 > $$
 > where in (*) we used the fact that
 > $$
