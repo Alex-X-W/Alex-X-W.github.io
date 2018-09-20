@@ -52,7 +52,7 @@ $$
 
 2. Derive the equivalency of defining optimal value function via Eq.(4) and via Eq.(2).
 
-   (Note in fact we only need the necessity direction in the proof, but the sufficiency is obvious since we construct Eq.(4) from Eq.(2).)
+   (Note in fact we only need the necessity direction in the proof, because the sufficiency is obvious since we construct Eq.(4) from Eq.(2).)
 
 3. Prove that there is a unique solution to Eq.(4).
 
@@ -123,7 +123,7 @@ b) If $\tilde V \le \mc T \tilde V$, then $\tilde V \le V^\ast$.
 > \tilde V - V^\pi \ge \underbrace{\gamma^n P_\pi^n \tilde V -\sum_{i=n}^{\infty}\gamma^i P_\pi^i R_{d_{i+1}}}_{\rightarrow 0 \ \text{as}\ n\rightarrow \infty}
 > $$
 > 
-> So we have $\tilde V \ge V^\pi$. And since this holds for any $n$, we conclude that
+> So we have $\tilde V \ge V^\pi$. And since this holds for any $\pi$, we conclude that
 > 
 > $$
 > \tilde V \ge \max_\pi V^\pi = V^\ast
